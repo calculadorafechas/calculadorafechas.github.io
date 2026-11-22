@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+<meta name="google-site-verification" content="HoWofmErOOKMSn8dHeXvBTb5cGoEBEB1rQ7Y3CrUYgY" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Calculadora de Fechas — Días entre fechas, días laborables y plazos</title>
+    <meta name="description" content="Calculadora de fechas gratuita en español: calcula los días entre dos fechas, suma o resta días a una fecha, cuenta los días laborables y descubre qué día será dentro de X días. Sin registro y con resultados al instante." />
+    <link rel="canonical" href="https://calculadorafechas.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Calculadora de Fechas" />
+    <meta property="og:title" content="Calculadora de Fechas — Días entre fechas, días laborables y plazos" />
+    <meta property="og:description" content="Calcula los días entre dos fechas, suma o resta días, cuenta los días laborables y resuelve plazos y vencimientos. Herramientas gratuitas en español, sin registro." />
+    <meta property="og:url" content="https://calculadorafechas.github.io/" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Calculadora de Fechas" />
+    <meta name="twitter:description" content="Días entre fechas, días laborables, suma y resta de días y cálculo de vencimientos. Gratis y en español." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Calculadora de Fechas",
+          "url": "https://calculadorafechas.github.io/",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Calculadora de Fechas",
+          "url": "https://calculadorafechas.github.io/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any",
+          "inLanguage": "es",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "description": "Herramientas gratuitas para calcular días entre fechas, sumar o restar días, contar días laborables y resolver fechas de vencimiento."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "¿Cómo se calculan los días entre dos fechas?", "acceptedAnswer": { "@type": "Answer", "text": "Resta la fecha más antigua a la más reciente contando los días completos que transcurren entre ambas. Nuestra herramienta de días entre fechas hace ese cálculo al instante y además expresa el resultado en semanas, meses y años aproximados." } },
+            { "@type": "Question", "name": "¿Qué diferencia hay entre días naturales y días laborables?", "acceptedAnswer": { "@type": "Answer", "text": "Los días naturales son todos los días del calendario, incluidos sábados, domingos y festivos. Los días laborables son únicamente los días hábiles de trabajo, normalmente de lunes a viernes y sin contar los festivos." } },
+            { "@type": "Question", "name": "¿Los días laborables incluyen los sábados?", "acceptedAnswer": { "@type": "Answer", "text": "Por norma general, no. En la mayoría de los convenios y normas administrativas los días laborables o hábiles van de lunes a viernes. Algunas actividades concretas pueden considerar el sábado como laborable, por lo que conviene revisar siempre la norma o el contrato que aplique." } },
+            { "@type": "Question", "name": "¿Cómo sumo días a una fecha sin contar a mano?", "acceptedAnswer": { "@type": "Answer", "text": "Con la herramienta de sumar o restar días: elige la fecha de partida, escribe el número de días y pulsa calcular. El resultado muestra la fecha exacta y el día de la semana en que cae." } },
+            { "@type": "Question", "name": "¿Qué día será dentro de 30 días?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de la fecha de hoy. Usa los accesos rápidos de la sección «¿Qué día será dentro de X días?» y verás al instante la fecha correspondiente a 7, 15, 30, 60, 90, 180 o 365 días desde hoy." } },
+            { "@type": "Question", "name": "¿Cómo se calcula una fecha de vencimiento?", "acceptedAnswer": { "@type": "Answer", "text": "Parte de la fecha inicial (por ejemplo, la de emisión de una factura o la de notificación) y súmale el plazo indicado. Es fundamental saber si el plazo se expresa en días naturales o laborables, porque el resultado puede variar varios días." } },
+            { "@type": "Question", "name": "¿El día inicial cuenta dentro del plazo?", "acceptedAnswer": { "@type": "Answer", "text": "En muchos procedimientos administrativos el cómputo empieza el día siguiente al hecho inicial, pero no es una regla universal. Revisa siempre la norma, el contrato o la notificación concreta para saber desde qué día empieza a contar tu plazo." } },
+            { "@type": "Question", "name": "¿La calculadora tiene en cuenta los años bisiestos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todos los cálculos se realizan con fechas reales del calendario, de modo que los años bisiestos (con 29 de febrero) y la duración distinta de cada mes se tienen en cuenta automáticamente." } },
+            { "@type": "Question", "name": "¿La calculadora descuenta los días festivos?", "acceptedAnswer": { "@type": "Answer", "text": "La herramienta de días laborables descuenta sábados y domingos, pero no los festivos, porque varían según el país, la región e incluso el municipio. Si un festivo cae dentro de tu plazo, réstalo manualmente del resultado." } },
+            { "@type": "Question", "name": "¿Mis fechas se guardan en algún servidor?", "acceptedAnswer": { "@type": "Answer", "text": "No. Todos los cálculos se hacen en tu propio navegador; las fechas que introduces no se envían ni se almacenan en ningún servidor." } }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+      * { box-sizing: border-box; }
+      :root {
+        --bg: #fbfbf9;
+        --surface: #ffffff;
+        --text: #1d2422;
+        --muted: #5c6663;
+        --accent: #0e6b5c;
+        --accent-strong: #095144;
+        --accent-soft: #e7f2ee;
+        --border: #dde3e0;
+        --result-bg: #eef6f3;
+        --warn-bg: #fdf3e3;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14181a;
+          --surface: #1c2124;
+          --text: #e8ecea;
+          --muted: #a3aea9;
+          --accent: #4cc2ab;
+          --accent-strong: #7fd8c3;
+          --accent-soft: #1d2f2b;
+          --border: #333b3f;
+          --result-bg: #1d2f2b;
+          --warn-bg: #33301f;
+        }
+      }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+      }
+      a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+      a:hover { color: var(--accent-strong); }
+      .wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+      /* Navegación */
+      .topbar { border-bottom: 1px solid var(--border); background: var(--surface); }
+      .topbar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; padding-top: 12px; padding-bottom: 12px; }
+      .brand { font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; }
+      .brand:hover { color: var(--accent-strong); }
+      nav.main { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-left: auto; }
+      nav.main a { display: inline-flex; align-items: center; min-height: 36px; font-size: 15.5px; }
+
+      main { padding: 34px 0 10px; }
+      h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; color: var(--text); }
+      h1 { font-size: 34px; margin: 0 0 14px; }
+      h2 { font-size: 25px; margin: 38px 0 12px; }
+      h3 { font-size: 20px; margin: 26px 0 8px; }
+      p { margin: 0 0 14px; }
+      .lead { font-size: 19px; color: var(--text); }
+      .muted { color: var(--muted); }
+      ul.plain { margin: 0 0 14px; padding-left: 22px; }
+      ul.plain li { margin-bottom: 6px; }
+
+      /* Herramientas */
+      .tool {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 22px 22px 18px;
+        margin: 22px 0;
+      }
+      .tool h2 { margin-top: 0; font-size: 23px; }
+      .tool p.desc { color: var(--muted); margin-bottom: 16px; }
+      .fields { display: flex; flex-wrap: wrap; gap: 14px; }
+      .field { flex: 1 1 200px; }
+      .field label { display: block; font-size: 14.5px; font-weight: 600; margin-bottom: 5px; }
+      input[type="date"], input[type="number"] {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 16.5px;
+        font-family: inherit;
+        color: var(--text);
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 7px;
+      }
+      input:focus-visible, button:focus-visible, summary:focus-visible, a:focus-visible {
+        outline: 2px solid var(--accent); outline-offset: 2px;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 9px 22px;
+        font-size: 16.5px;
+        font-weight: 600;
+        font-family: inherit;
+        color: #fff;
+        background: var(--accent);
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+        min-height: 44px;
+      }
+      @media (prefers-color-scheme: dark) { .btn { color: #0c1512; } }
+      .btn:hover { background: var(--accent-strong); }
+      .btn.secondary { background: var(--accent-soft); color: var(--accent-strong); }
+      .btn.secondary:hover { background: var(--border); }
+      .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; margin-top: 2px; }
+      .seg button {
+        padding: 8px 18px; font-size: 15.5px; font-family: inherit; cursor: pointer;
+        background: var(--surface); color: var(--text); border: none; min-height: 40px;
+      }
+      .seg button.active { background: var(--accent); color: #fff; font-weight: 600; }
+      @media (prefers-color-scheme: dark) { .seg button.active { color: #0c1512; } }
+      .result {
+        display: none;
+        margin-top: 18px;
+        background: var(--result-bg);
+        border-radius: 8px;
+        padding: 16px 18px;
+      }
+      .result.show { display: block; }
+      .result .big { font-size: 30px; font-weight: 700; font-family: Georgia, serif; line-height: 1.2; }
+      .result .detail { margin-top: 6px; color: var(--text); }
+      .result .detail span { white-space: nowrap; }
+      .error { display: none; margin-top: 14px; background: var(--warn-bg); border-radius: 8px; padding: 12px 16px; }
+      .error.show { display: block; }
+      .quick { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 4px; }
+      .quick button {
+        padding: 8px 16px; font-size: 15.5px; font-family: inherit; cursor: pointer;
+        background: var(--accent-soft); color: var(--accent-strong);
+        border: 1px solid var(--border); border-radius: 999px; min-height: 40px; font-weight: 600;
+      }
+      .quick button:hover { border-color: var(--accent); }
+
+      /* Artículos (índice) */
+      .article-list { list-style: none; margin: 18px 0 6px; padding: 0; }
+      .article-list li { padding: 16px 0; border-bottom: 1px solid var(--border); }
+      .article-list li:first-child { border-top: 1px solid var(--border); }
+      .article-list a.title { font-family: Georgia, serif; font-size: 20px; font-weight: 700; }
+      .article-list p { margin: 6px 0 0; color: var(--muted); font-size: 16px; }
+
+      /* FAQ */
+      details.faq { border-bottom: 1px solid var(--border); padding: 4px 0; }
+      details.faq summary { cursor: pointer; font-weight: 600; font-size: 17.5px; padding: 10px 0; list-style: none; }
+      details.faq summary::-webkit-details-marker { display: none; }
+      details.faq summary::after { content: "+"; float: right; color: var(--accent); font-weight: 700; }
+      details.faq[open ] summary::after { content: "–"; }
+      details.faq p { color: var(--text); padding-bottom: 12px; }
+
+      .crumb { font-size: 14.5px; color: var(--muted); margin-bottom: 18px; }
+      article.prose p { margin-bottom: 16px; }
+      .backlink { margin-top: 34px; }
+
+      footer { border-top: 1px solid var(--border); margin-top: 48px; background: var(--surface); }
+      footer .wrap { padding-top: 24px; padding-bottom: 30px; }
+      footer nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-bottom: 12px; }
+      footer nav a { display: inline-flex; align-items: center; min-height: 36px; font-size: 15px; }
+      footer p { font-size: 14.5px; color: var(--muted); margin: 0; }
+
+      .page { display: none; }
+      .page.active { display: block; }
+      @media (max-width: 560px) {
+        h1 { font-size: 28px; }
+        body { font-size: 16.5px; }
+        .tool { padding: 18px 16px 14px; }
+        nav.main { margin-left: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="#/">Calculadora de Fechas</a>
+        <nav class="main" aria-label="Navegación principal">
+          <a href="#/">Inicio</a>
+          <a href="#/articles">Artículos</a>
+          <a href="#faq">Preguntas frecuentes</a>
+          <a href="#/sobre-nosotros">Sobre nosotros</a>
+          <a href="#/contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- ============ INICIO ============ -->
+      <section class="page" id="page-home">
+        <h1>Calculadora de fechas</h1>
+        <p class="lead">Cuatro herramientas gratuitas para trabajar con fechas sin contar días a mano: cuántos días hay entre dos fechas, qué fecha resulta al sumar o restar días, cuántos días laborables tiene un periodo y qué día será dentro de un número concreto de días.</p>
+        <p>Detrás de casi cualquier trámite hay un cálculo de fechas: el plazo para entregar un documento, la fecha de vencimiento de una factura, los días de vacaciones que quedan o el tiempo exacto entre dos momentos importantes. Hacer estas cuentas con un calendario delante es lento y es fácil equivocarse en un día, sobre todo cuando intervienen meses de distinta duración o años bisiestos. En esta página encontrarás las herramientas para resolverlo en segundos y, si quieres entender el procedimiento, también puedes aprender <a href="#/como-calcular-dias-entre-fechas">cómo calcular los días entre dos fechas</a> paso a paso.</p>
+
+        <div class="tool" id="tool-diferencia">
+          <h2>Días entre fechas</h2>
+          <p class="desc">Elige dos fechas y descubre cuántos días exactos las separan, expresados también en semanas, meses y años aproximados.</p>
+          <div class="fields">
+            <div class="field">
+              <label for="dif-desde">Fecha inicial</label>
+              <input type="date" id="dif-desde" />
+            </div>
+            <div class="field">
+              <label for="dif-hasta">Fecha final</label>
+              <input type="date" id="dif-hasta" />
+            </div>
+          </div>
+          <button class="btn" id="dif-btn" type="button">Calcular días</button>
+          <div class="error" id="dif-error">Elige las dos fechas para ver el resultado.</div>
+          <div class="result" id="dif-result" aria-live="polite">
+            <div class="big" id="dif-big"></div>
+            <div class="detail" id="dif-detail"></div>
+          </div>
+        </div>
+
+        <div class="tool" id="tool-sumar">
+          <h2>Sumar o restar días a una fecha</h2>
+          <p class="desc">Añade o quita un número de días a cualquier fecha y conoce la fecha resultante junto con el día de la semana en que cae.</p>
+          <div class="fields">
+            <div class="field">
+              <label for="sum-fecha">Fecha de partida</label>
+              <input type="date" id="sum-fecha" />
+            </div>
+            <div class="field">
+              <label for="sum-dias">Número de días</label>
+              <input type="number" id="sum-dias" min="0" step="1" value="30" inputmode="numeric" />
+            </div>
+            <div class="field">
+              <label>Operación</label>
+              <div class="seg" role="group" aria-label="Operación">
+                <button type="button" id="seg-sumar" class="active">Sumar</button>
+                <button type="button" id="seg-restar">Restar</button>
+              </div>
+            </div>
+          </div>
+          <button class="btn" id="sum-btn" type="button">Calcular fecha</button>
+          <div class="error" id="sum-error">Elige una fecha de partida y un número de días válido (0 o más).</div>
+          <div class="result" id="sum-result" aria-live="polite">
+            <div class="big" id="sum-big"></div>
+            <div class="detail" id="sum-detail"></div>
+          </div>
+        </div>
+
+        <div class="tool" id="tool-laborables">
+          <h2>Días laborables entre fechas</h2>
+          <p class="desc">Cuenta cuántos días de lunes a viernes hay entre dos fechas, incluyendo ambas. Ten en cuenta que los festivos no se descuentan, porque dependen de cada país y localidad.</p>
+          <div class="fields">
+            <div class="field">
+              <label for="lab-desde">Fecha inicial</label>
+              <input type="date" id="lab-desde" />
+            </div>
+            <div class="field">
+              <label for="lab-hasta">Fecha final</label>
+              <input type="date" id="lab-hasta" />
+            </div>
+          </div>
+          <button class="btn" id="lab-btn" type="button">Contar días laborables</button>
+          <div class="error" id="lab-error">Elige las dos fechas para ver el resultado.</div>
+          <div class="result" id="lab-result" aria-live="polite">
+            <div class="big" id="lab-big"></div>
+            <div class="detail" id="lab-detail"></div>
+          </div>
+        </div>
+
+        <div class="tool" id="tool-rapido">
+          <h2>¿Qué día será dentro de X días?</h2>
+          <p class="desc">Accesos rápidos desde hoy. Pulsa un plazo y verás la fecha exacta y el día de la semana.</p>
+          <div class="quick" id="quick-btns">
+            <button type="button" data-dias="7">7 días</button>
+            <button type="button" data-dias="15">15 días</button>
+            <button type="button" data-dias="30">30 días</button>
+            <button type="button" data-dias="60">60 días</button>
+            <button type="button" data-dias="90">90 días</button>
+            <button type="button" data-dias="180">180 días</button>
+            <button type="button" data-dias="365">365 días</button>
+          </div>
+          <div class="result" id="quick-result" aria-live="polite">
+            <div class="big" id="quick-big"></div>
+            <div class="detail" id="quick-detail"></div>
+          </div>
+        </div>
+
+        <h2>¿Para qué sirve calcular días entre fechas?</h2>
+        <p>Las situaciones son más cotidianas de lo que parece. Un autónomo necesita saber cuándo vencen los 30 días de pago de una factura; una persona que recibe una notificación debe contar el plazo para presentar una alegación; alguien que planifica un viaje quiere saber cuántos días faltan para salir y cuántos durará exactamente. En todos estos casos hay dos ideas que conviene no confundir: no es lo mismo hablar de <a href="#/dias-laborables-vs-naturales">días laborables y días naturales</a>, porque un plazo de «diez días» puede terminar en fechas muy distintas según el tipo de día que se cuente.</p>
+        <p>También hay una trampa frecuente: asumir que todos los meses tienen 30 días. Febrero tiene 28 (o 29 en año bisiesto), y meses como abril o junio tienen 30 mientras que enero o marzo tienen 31. Por eso, cuando el periodo es largo, contar a mano casi garantiza un error. Si tu caso es un plazo formal, te recomendamos leer nuestra guía sobre <a href="#/calcular-vencimientos-plazos">cómo calcular fechas de vencimiento y plazos</a>, donde explicamos qué día empieza a contar, qué ocurre si el último día cae en fin de semana y cómo evitar los fallos más habituales.</p>
+
+        <h2>Artículos</h2>
+        <ul class="article-list">
+          <li>
+            <a class="title" href="#/como-calcular-dias-entre-fechas">Cómo calcular los días entre dos fechas</a>
+            <p>El método paso a paso para restar fechas sin equivocarse, con ejemplos de años bisiestos y meses de distinta duración, y los errores que más se repiten.</p>
+          </li>
+          <li>
+            <a class="title" href="#/dias-laborables-vs-naturales">Días laborables y días naturales: cuál es la diferencia</a>
+            <p>Qué significa cada concepto, cuándo se usa uno u otro en contratos, trámites y plazos, y por qué confundirlos puede hacerte perder un vencimiento.</p>
+          </li>
+          <li>
+            <a class="title" href="#/calcular-vencimientos-plazos">Cómo calcular fechas de vencimiento y plazos</a>
+            <p>Cómo fijar la fecha límite de una factura, una garantía o un trámite: desde qué día se cuenta, qué pasa si cae en festivo y cómo verificar el resultado.</p>
+          </li>
+        </ul>
+        <p><a href="#/articles">Ver todos los artículos</a></p>
+
+        <h2 id="faq">Preguntas frecuentes</h2>
+        <details class="faq">
+          <summary>¿Cómo se calculan los días entre dos fechas?</summary>
+          <p>Se cuentan los días completos que transcurren desde la fecha inicial hasta la fecha final. La forma más fiable es usar la herramienta de días entre fechas de esta página: introduces ambas fechas y obtienes el número exacto, además de su equivalencia en semanas, meses y años aproximados.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Qué diferencia hay entre días naturales y días laborables?</summary>
+          <p>Los días naturales son todos los del calendario, incluidos sábados, domingos y festivos. Los días laborables son solo los días hábiles de trabajo, normalmente de lunes a viernes y excluyendo festivos. Un mismo plazo dura más en el calendario si se cuenta en días laborables.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Los días laborables incluyen los sábados?</summary>
+          <p>Por norma general, no: en la mayoría de normas y convenios los días laborables van de lunes a viernes. Sin embargo, algunas actividades y contratos consideran el sábado como laborable, así que conviene comprobar siempre qué dice el documento que regula tu caso.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Cómo sumo días a una fecha sin contar a mano?</summary>
+          <p>Con la herramienta de sumar o restar días: elige la fecha de partida, escribe cuántos días quieres añadir y pulsa «Calcular fecha». El resultado muestra la fecha exacta y el día de la semana en que cae, teniendo en cuenta la duración real de cada mes.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Qué día será dentro de 30 días?</summary>
+          <p>Depende del día de hoy, así que la respuesta cambia a diario. En la sección «¿Qué día será dentro de X días?» tienes botones de acceso rápido para 7, 15, 30, 60, 90, 180 y 365 días calculados desde la fecha actual.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Cómo se calcula una fecha de vencimiento?</summary>
+          <p>Se parte de la fecha inicial —por ejemplo, la emisión de una factura o la recepción de una notificación— y se le suma el plazo indicado. Lo esencial es saber si ese plazo está expresado en días naturales o laborables, porque la fecha final puede variar en varios días.</p>
+        </details>
+        <details class="faq">
+          <summary>¿El día inicial cuenta dentro del plazo?</summary>
+          <p>En muchos procedimientos el cómputo comienza el día siguiente al hecho que origina el plazo, pero no es una regla universal. La norma, el contrato o la notificación de tu caso concreto es la que manda: revísala antes de dar por buena una fecha límite.</p>
+        </details>
+        <details class="faq">
+          <summary>¿La calculadora tiene en cuenta los años bisiestos?</summary>
+          <p>Sí. Todos los cálculos se hacen con fechas reales del calendario, así que el 29 de febrero de los años bisiestos y la duración distinta de cada mes se tienen en cuenta automáticamente, sin que tengas que ajustar nada.</p>
+        </details>
+        <details class="faq">
+          <summary>¿La calculadora descuenta los días festivos?</summary>
+          <p>La herramienta de días laborables descuenta los sábados y domingos, pero no los festivos, porque cambian según el país, la comunidad o región e incluso el municipio. Si dentro de tu periodo hay festivos, resta su número del resultado obtenido.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Mis fechas se guardan en algún servidor?</summary>
+          <p>No. Todos los cálculos se realizan en tu propio navegador y las fechas que introduces no se envían ni se almacenan en ningún servidor. Puedes cerrar la página y no quedará ningún registro de tus consultas.</p>
+        </details>
+      </section>
+
+      <!-- ============ ÍNDICE DE ARTÍCULOS ============ -->
+      <section class="page" id="page-articles">
+        <p class="crumb"><a href="#/">Inicio</a> › Artículos</p>
+        <h1>Artículos</h1>
+        <p class="lead">Guías claras y escritas en lenguaje sencillo para entender cómo se cuentan los días, cómo se interpretan los plazos y cómo se fijan las fechas de vencimiento sin errores.</p>
+        <ul class="article-list">
+          <li>
+            <a class="title" href="#/como-calcular-dias-entre-fechas">Cómo calcular los días entre dos fechas</a>
+            <p>El método paso a paso para restar fechas sin equivocarse, con ejemplos de años bisiestos y meses de distinta duración, y los errores que más se repiten.</p>
+          </li>
+          <li>
+            <a class="title" href="#/dias-laborables-vs-naturales">Días laborables y días naturales: cuál es la diferencia</a>
+            <p>Qué significa cada concepto, cuándo se usa uno u otro en contratos, trámites y plazos, y por qué confundirlos puede hacerte perder un vencimiento.</p>
+          </li>
+          <li>
+            <a class="title" href="#/calcular-vencimientos-plazos">Cómo calcular fechas de vencimiento y plazos</a>
+            <p>Cómo fijar la fecha límite de una factura, una garantía o un trámite: desde qué día se cuenta, qué pasa si cae en festivo y cómo verificar el resultado.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============ ARTÍCULO 1 ============ -->
+      <section class="page" id="page-como-calcular">
+        <p class="crumb"><a href="#/">Inicio</a> › <a href="#/articles">Artículos</a> › Cómo calcular los días entre dos fechas</p>
+        <article class="prose">
+          <h1>Cómo calcular los días entre dos fechas</h1>
+          <p>Calcular cuántos días hay entre dos fechas parece una operación sencilla, y lo es… siempre que el periodo sea corto y no cruce cambios de mes. En cuanto el intervalo abarca varios meses, un fin de año o un febrero bisiesto, contar a mano se convierte en una fuente de errores. En este artículo explicamos el método correcto, paso a paso, para que puedas hacerlo tú mismo y comprobar cualquier resultado.</p>
+
+          <h2>La idea básica: restar fechas</h2>
+          <p>El número de días entre dos fechas es, simplemente, la cantidad de días completos que transcurren desde la primera hasta la segunda. Si hoy es día 10 y quieres saber cuántos días faltan para el día 25 del mismo mes, la cuenta es directa: 25 menos 10, es decir, 15 días. La dificultad aparece cuando las fechas están en meses o años distintos, porque entonces no basta con restar los números del día: hay que tener en cuenta cuántos días tiene cada mes que queda en medio.</p>
+          <p>Un truco útil para intervalos largos consiste en descomponer el cálculo en tres partes: los días que quedan del primer mes, los meses completos intermedios y los días transcurridos del último mes. Sumando las tres partes se obtiene el total exacto.</p>
+
+          <h2>Ejemplo paso a paso</h2>
+          <p>Imagina que quieres saber cuántos días hay entre el 20 de enero y el 15 de marzo de un año no bisiesto. Primero, los días que quedan de enero después del día 20: enero tiene 31 días, así que del 20 al 31 hay 11 días. Después, febrero completo: 28 días. Por último, los días de marzo hasta el 15: 15 días. La suma es 11 + 28 + 15 = 54 días. Si el mismo cálculo se hace en un año bisiesto, febrero aporta 29 días y el resultado sería 55. Ese único día de diferencia es el que más a menudo se escapa al contar a mano.</p>
+
+          <h2>Los años bisiestos y la duración de los meses</h2>
+          <p>Un año es bisiesto cuando es divisible entre 4, con la excepción de los años de siglo que no son divisibles entre 400. En la práctica, años como 2024 o 2028 son bisiestos y su febrero tiene 29 días en lugar de 28. En cuanto a los meses, conviene recordar la distribución clásica: 31 días para enero, marzo, mayo, julio, agosto, octubre y diciembre; 30 días para abril, junio, septiembre y noviembre; y febrero como caso especial. Cualquier método de cálculo que no respete esta distribución producirá resultados aproximados, no exactos.</p>
+
+          <h2>Expresar el resultado en semanas, meses y años</h2>
+          <p>A veces el dato en días no es el más cómodo de interpretar. Para periodos largos resulta útil traducirlo: las semanas se obtienen dividiendo los días entre 7 (y expresando el resto como días sueltos), mientras que los meses y años aproximados se calculan dividiendo entre 30,44 y 365,25 respectivamente, que son las duraciones medias reales. Son valores aproximados —un «mes» no siempre dura lo mismo—, pero sirven muy bien para hacerse una idea rápida de la magnitud de un periodo. Nuestra <a href="#/">herramienta de días entre fechas</a> ofrece todas estas equivalencias junto al número exacto de días.</p>
+
+          <h2>Errores frecuentes al contar días</h2>
+          <p>El primer error clásico es contar dos veces el día inicial o el final. Hay que decidir un criterio —lo habitual es contar los días completos transcurridos— y mantenerlo. El segundo error es suponer que todos los meses tienen 30 días, algo que puede desplazar el resultado hasta en tres días en intervalos largos. El tercero es olvidar el 29 de febrero cuando el periodo cruza un año bisiesto. Y el cuarto, muy habitual en plazos oficiales, es mezclar el cómputo en días naturales con el cómputo en días laborables: si tu plazo está expresado en días laborables, el procedimiento cambia, como explicamos en el artículo sobre <a href="#/dias-laborables-vs-naturales">días laborables y días naturales</a>.</p>
+
+          <h2>Cuándo conviene usar la calculadora</h2>
+          <p>Para intervalos de pocos días dentro del mismo mes, la resta mental es suficiente. Pero si el periodo supera un mes, cruza un cambio de año o sirve para fijar una fecha límite con consecuencias —una entrega, un pago, un trámite—, lo prudente es verificar el resultado con una herramienta. Puedes hacerlo en la página principal con la <a href="#/">calculadora de días entre fechas</a>, y si además necesitas proyectar el resultado hacia el futuro, la guía sobre <a href="#/calcular-vencimientos-plazos">cómo calcular fechas de vencimiento y plazos</a> te ayudará a interpretar qué significa esa cifra en tu caso concreto.</p>
+          <p class="backlink"><a href="#/articles">← Volver a los artículos</a></p>
+        </article>
+      </section>
+
+      <!-- ============ ARTÍCULO 2 ============ -->
+      <section class="page" id="page-laborables">
+        <p class="crumb"><a href="#/">Inicio</a> › <a href="#/articles">Artículos</a> › Días laborables y días naturales</p>
+        <article class="prose">
+          <h1>Días laborables y días naturales: cuál es la diferencia</h1>
+          <p>«Tienes diez días para presentar la documentación». La frase parece clara, pero esconde una pregunta decisiva: ¿diez días de qué tipo? Según se cuenten como días naturales o como días laborables, la fecha límite puede variar en casi una semana. Entender la diferencia entre ambos conceptos es imprescindible para no perder un plazo ni entregar nada fuera de tiempo.</p>
+
+          <h2>Qué son los días naturales</h2>
+          <p>Los días naturales son todos los días del calendario, sin excepción: laborables, sábados, domingos y festivos cuentan por igual. Si un plazo de 15 días naturales empieza un lunes, terminará quince días después en el calendario, caiga el último día en el día de la semana que caiga. Es el cómputo más sencillo de seguir porque no exige consultar ningún calendario laboral: basta con avanzar día a día, tal como se explica en la guía sobre <a href="#/como-calcular-dias-entre-fechas">cómo calcular los días entre dos fechas</a>.</p>
+
+          <h2>Qué son los días laborables</h2>
+          <p>Los días laborables —también llamados días hábiles en muchos textos administrativos— son únicamente los días de trabajo ordinario: de lunes a viernes, excluyendo además los días festivos. En un plazo de 10 días laborables que empieza un lunes, los dos fines de semana intermedios no cuentan, de modo que la fecha límite real se desplaza hasta el lunes de dos semanas después. El resultado práctico es que un plazo en días laborables siempre «dura más» en el calendario que el mismo número de días naturales.</p>
+          <p>Existe un matiz que genera mucha confusión: el sábado. En la mayoría de normas y convenios actuales el sábado no es día laborable, pero en sectores concretos —comercio, hostelería, ciertos contratos antiguos— puede considerarse como tal. Por eso, ante un plazo importante, hay que comprobar siempre cómo define los días el documento que lo regula.</p>
+
+          <h2>Y los festivos, ¿cuentan?</h2>
+          <p>En el cómputo de días naturales, sí: un festivo es un día más. En el cómputo de días laborables, no: los festivos se saltan igual que los fines de semana. El problema es que los festivos no son universales: cambian de un país a otro, de una región a otra e incluso entre municipios vecinos. Por eso las calculadoras en línea, incluida nuestra <a href="#/">herramienta de días laborables</a>, descuentan sábados y domingos pero no pueden descontar automáticamente los festivos de tu localidad: si en tu periodo hay uno, debes restarlo tú del resultado.</p>
+
+          <h2>Cuándo se usa cada tipo de día</h2>
+          <p>Como orientación general, los plazos administrativos y judiciales suelen expresarse en días hábiles o laborables, porque sería injusto que el tiempo corriera cuando las oficinas están cerradas. En cambio, muchos plazos comerciales y civiles —la duración de un alquiler, el periodo de prueba de un producto, el vencimiento ordinario de una factura— se expresan en días naturales. Nada de esto es una regla absoluta: lo que manda es siempre el texto concreto de la ley, el contrato o la notificación que fije tu plazo. Si ese texto no especifica el tipo de día, lo habitual en muchos ordenamientos es interpretar que se trata de días naturales, pero ante la duda merece la pena consultar a un profesional.</p>
+
+          <h2>Un ejemplo con las dos cuentas</h2>
+          <p>Supón que recibes una notificación un lunes y tienes 10 días para responder. En días naturales, tu plazo termina el jueves de la semana siguiente. En días laborables, al no contar los dos fines de semana intermedios, el plazo termina el lunes de la semana siguiente a esa. La diferencia es de cuatro días naturales: suficiente para que una respuesta perfectamente válida se presente, por error, fuera de plazo. Este tipo de situación es exactamente la que se evita aplicando con calma el método descrito en nuestra guía sobre <a href="#/calcular-vencimientos-plazos">cómo calcular fechas de vencimiento y plazos</a>.</p>
+
+          <h2>Resumen práctico</h2>
+          <p>Antes de contar cualquier plazo, responde a tres preguntas: ¿el plazo es en días naturales o laborables?, ¿desde qué día empieza a contar?, y ¿hay festivos dentro del periodo? Con esas tres respuestas claras, el cálculo es mecánico: usa la <a href="#/">calculadora de días laborables</a> de la página principal si tu plazo es laborable, o la de días entre fechas si es natural, y anota la fecha resultante con un pequeño margen de seguridad.</p>
+          <p class="backlink"><a href="#/articles">← Volver a los artículos</a></p>
+        </article>
+      </section>
+
+      <!-- ============ ARTÍCULO 3 ============ -->
+      <section class="page" id="page-vencimientos">
+        <p class="crumb"><a href="#/">Inicio</a> › <a href="#/articles">Artículos</a> › Cómo calcular fechas de vencimiento y plazos</p>
+        <article class="prose">
+          <h1>Cómo calcular fechas de vencimiento y plazos</h1>
+          <p>Una fecha de vencimiento mal calculada puede salir cara: intereses de demora en una factura, una garantía que se da por caducada o un trámite rechazado por presentarse un día tarde. La buena noticia es que fijar bien una fecha límite es un procedimiento ordenado que cualquiera puede seguir. En este artículo lo recorremos completo, desde la fecha inicial hasta la comprobación final.</p>
+
+          <h2>Paso 1: identifica la fecha inicial</h2>
+          <p>Todo plazo nace de un hecho concreto: la emisión de una factura, la firma de un contrato, la entrega de un producto o la recepción de una notificación. Esa es tu fecha inicial o «día cero». Anótala con precisión, porque un error de un solo día aquí se traslada intacto al resultado final. Si el documento indica una hora límite —por ejemplo, registros que cierran a las 14:00—, tenla también en cuenta desde el principio.</p>
+
+          <h2>Paso 2: averigua el tipo de plazo</h2>
+          <p>El segundo dato imprescindible es cómo se expresa el plazo: ¿en días naturales, en días laborables, en meses o en años? No es un detalle menor. Como explicamos en el artículo sobre <a href="#/dias-laborables-vs-naturales">días laborables y días naturales</a>, un mismo número de días produce fechas límite muy distintas según el tipo de cómputo. Si el plazo viene dado en meses, la fecha límite suele ser el mismo número de día del mes correspondiente (del 15 de enero al 15 de febrero, por ejemplo), con ajustes cuando el mes de destino es más corto.</p>
+
+          <h2>Paso 3: decide si el día inicial cuenta</h2>
+          <p>En muchos procedimientos administrativos, el plazo empieza a contar el día siguiente al hecho inicial: si te notifican un martes, el primer día del plazo es el miércoles. En cambio, en acuerdos comerciales es frecuente contar desde el propio día del hecho. No existe una única regla válida para todo, así que este punto debe salir del texto que regula tu caso. Si el documento no lo aclara, adopta el criterio más prudente: calcula la fecha con el criterio que te dé menos margen y actúa antes de esa fecha.</p>
+
+          <h2>Paso 4: suma el plazo a la fecha inicial</h2>
+          <p>Con los tres datos anteriores claros, la operación es mecánica. Si el plazo es en días naturales, avanza ese número de días en el calendario; si es en días laborables, avanza saltando sábados, domingos y festivos. Para hacerlo sin errores puedes usar la <a href="#/">herramienta de sumar o restar días</a> de la página principal para plazos naturales, o la calculadora de días laborables si necesitas verificar cuántos días hábiles abarca un periodo. Y si tu duda es la inversa —cuánto tiempo queda entre hoy y una fecha futura—, el método del artículo sobre <a href="#/como-calcular-dias-entre-fechas">cómo calcular los días entre dos fechas</a> te da el número exacto de días restantes.</p>
+
+          <h2>Qué pasa si el último día cae en fin de semana o festivo</h2>
+          <p>Es una situación muy común y cada ámbito la resuelve a su manera. En numerosos procedimientos administrativos, si el último día del plazo es inhábil, el plazo se prorroga automáticamente hasta el siguiente día hábil. En el ámbito comercial, en cambio, lo habitual es que el vencimiento se mantenga y simplemente se anticipe el pago o la entrega al día laborable anterior. La lección práctica es doble: comprueba en qué día de la semana cae tu fecha límite, y si cae en sábado, domingo o festivo, no des por hecho ni la prórroga ni la caducidad: verifica qué dice tu norma o tu contrato.</p>
+
+          <h2>Ejemplos cotidianos de vencimientos</h2>
+          <p>Una factura con pago a 30 días emitida el 5 de marzo vence el 4 de abril si se cuentan días naturales desde el día siguiente a la emisión. Una garantía de dos años de un producto comprado el 20 de junio de 2026 cubre hasta el 20 de junio de 2028. Un plazo de 10 días laborables para responder a una notificación recibida un lunes termina el lunes de dos semanas después, descontados los fines de semana y cualquier festivo intermedio. Tres casos distintos, un mismo procedimiento: fecha inicial clara, tipo de plazo identificado y suma verificada.</p>
+
+          <h2>Comprobación final: el hábito que evita problemas</h2>
+          <p>Antes de dar por buena una fecha límite, haz una doble comprobación sencilla: calcula el plazo hacia adelante desde la fecha inicial y, después, calcula los días que hay entre ambas fechas para confirmar que el resultado coincide con el plazo previsto. Si los dos números encajan, la fecha es correcta. Por último, anota el vencimiento con unos días de antelación en tu agenda: el mejor cálculo del mundo no sirve de nada si se descubre el mismo día en que vence.</p>
+          <p class="backlink"><a href="#/articles">← Volver a los artículos</a></p>
+        </article>
+      </section>
+
+      <!-- ============ SOBRE NOSOTROS ============ -->
+      <section class="page" id="page-sobre">
+        <p class="crumb"><a href="#/">Inicio</a> › Sobre nosotros</p>
+        <article class="prose">
+          <h1>Sobre nosotros</h1>
+          <p>Calculadora de Fechas es una página de utilidades creada con un objetivo modesto pero muy práctico: que nadie tenga que contar días en un calendario impreso ni fiarse de una cuenta mental cuando hay una fecha límite en juego.</p>
+          <p>El proyecto nació de una observación sencilla. Casi todas las personas, varias veces al año, necesitan responder a preguntas como cuántos días faltan para una entrega, cuándo vence exactamente una factura o cuántos días laborables tiene un permiso. Son preguntas pequeñas, pero una respuesta equivocada por un solo día puede tener consecuencias reales: un trámite fuera de plazo, un pago con recargo o unas vacaciones mal planificadas.</p>
+          <p>Por eso reunimos en un solo lugar las cuatro operaciones con fechas que más se repiten: la diferencia entre dos fechas, la suma y resta de días, el conteo de días laborables y la proyección rápida de «qué día será dentro de X días». Todas funcionan directamente en el navegador, sin registro, sin instalar nada y sin enviar tus datos a ningún servidor.</p>
+          <p>Además de las herramientas, publicamos artículos breves y escritos en lenguaje claro que explican los conceptos que hay detrás: la diferencia entre días naturales y laborables, el método correcto para restar fechas o el procedimiento completo para fijar un vencimiento. Creemos que una calculadora es más útil cuando la persona que la usa también entiende qué está calculando.</p>
+          <p>Si encuentras un error, tienes una sugerencia o quieres proponernos una nueva herramienta, puedes escribirnos desde la página de <a href="#/contacto">contacto</a>. Leemos todos los mensajes.</p>
+        </article>
+      </section>
+
+      <!-- ============ CONTACTO ============ -->
+      <section class="page" id="page-contacto">
+        <p class="crumb"><a href="#/">Inicio</a> › Contacto</p>
+        <article class="prose">
+          <h1>Contacto</h1>
+          <p>¿Has detectado un error en un cálculo, tienes una duda sobre cómo interpretar un plazo o quieres sugerir una nueva herramienta de fechas? Escríbenos y te responderemos lo antes posible.</p>
+          <p>Correo electrónico: <a href="mailto:contact@calculadorafechas.github.io">contact@calculadorafechas.github.io</a></p>
+          <p>Para que podamos ayudarte mejor, incluye en tu mensaje las fechas concretas con las que estás trabajando y el resultado que esperabas obtener. Ten en cuenta que podemos explicar cómo se realiza un cálculo, pero no podemos ofrecer asesoramiento legal sobre plazos concretos: para eso, lo adecuado es consultar a un profesional de tu localidad.</p>
+        </article>
+      </section>
+
+      <!-- ============ PRIVACIDAD ============ -->
+      <section class="page" id="page-privacidad">
+        <p class="crumb"><a href="#/">Inicio</a> › Política de privacidad</p>
+        <article class="prose">
+          <h1>Política de privacidad</h1>
+          <p>Última actualización: 22 de noviembre de 2026.</p>
+          <h2>Qué datos tratamos</h2>
+          <p>Calculadora de Fechas está diseñada para funcionar sin recoger datos personales. Todas las operaciones de cálculo se ejecutan localmente en tu navegador: las fechas que introduces en las herramientas no se transmiten a ningún servidor, no se almacenan y no se comparten con terceros. Cuando cierras la página, no queda ningún registro de tus consultas.</p>
+          <h2>Cookies</h2>
+          <p>Esta página no utiliza cookies propias de seguimiento ni de publicidad. Si en el futuro se incorporara alguna herramienta de medición de audiencia, esta política se actualizaría para describirla con detalle antes de su puesta en marcha.</p>
+          <h2>Correo electrónico</h2>
+          <p>Si nos escribes a nuestra dirección de contacto, trataremos tu correo únicamente para responder a tu mensaje. No cederemos tu dirección a terceros ni la utilizaremos para enviarte comunicaciones comerciales.</p>
+          <h2>Enlaces a otros sitios</h2>
+          <p>Esta página puede contener enlaces a sitios web de terceros. No somos responsables de las prácticas de privacidad de esos sitios, por lo que te recomendamos revisar sus propias políticas cuando los visites.</p>
+          <h2>Cambios en esta política</h2>
+          <p>Si modificamos esta política de privacidad, publicaremos la versión actualizada en esta misma página indicando la fecha de la última actualización. Si tienes cualquier duda sobre el tratamiento de datos, puedes escribirnos a <a href="mailto:contact@calculadorafechas.github.io">contact@calculadorafechas.github.io</a>.</p>
+        </article>
+      </section>
+
+      <!-- ============ TÉRMINOS ============ -->
+      <section class="page" id="page-terminos">
+        <p class="crumb"><a href="#/">Inicio</a> › Términos de uso</p>
+        <article class="prose">
+          <h1>Términos de uso</h1>
+          <p>Última actualización: 22 de noviembre de 2026.</p>
+          <h2>Uso del sitio</h2>
+          <p>Calculadora de Fechas ofrece herramientas gratuitas de cálculo con fechas y artículos informativos de carácter general. Puedes utilizar las herramientas libremente, sin registro, para fines personales o profesionales.</p>
+          <h2>Exactitud de los resultados</h2>
+          <p>Los cálculos se realizan con fechas reales del calendario y son matemáticamente exactos para las operaciones ofrecidas. No obstante, la interpretación de un plazo concreto —qué día empieza a contar, qué días son festivos en tu localidad o qué ocurre si el vencimiento cae en día inhábil— depende de la norma, el contrato o la notificación aplicable a cada caso. Los resultados de esta página tienen carácter orientativo y no sustituyen el asesoramiento de un profesional cualificado.</p>
+          <h2>Responsabilidad</h2>
+          <p>El uso que hagas de los resultados es responsabilidad tuya. Te recomendamos verificar siempre las fechas críticas por un segundo método antes de tomar decisiones con consecuencias legales, económicas o administrativas.</p>
+          <h2>Propiedad del contenido</h2>
+          <p>Los textos publicados en este sitio son originales y pertenecen a Calculadora de Fechas. Puedes enlazar a nuestras páginas libremente; la reproducción íntegra de los artículos requiere autorización previa.</p>
+          <h2>Modificaciones</h2>
+          <p>Podemos actualizar estos términos en cualquier momento. La versión vigente será siempre la publicada en esta página, con indicación de su fecha de actualización.</p>
+        </article>
+      </section>
+
+      <!-- ============ AVISO LEGAL / DISCLAIMER ============ -->
+      <section class="page" id="page-aviso">
+        <p class="crumb"><a href="#/">Inicio</a> › Aviso legal</p>
+        <article class="prose">
+          <h1>Aviso legal</h1>
+          <p>Calculadora de Fechas es una herramienta informativa de uso general. La información y los resultados que ofrece se proporcionan «tal cual», con fines orientativos, y no constituyen asesoramiento legal, fiscal, laboral ni de ninguna otra índole profesional.</p>
+          <p>Los plazos y vencimientos con efectos jurídicos dependen de la legislación vigente en cada país y, en su caso, en cada región o municipio, así como del contenido concreto de contratos, notificaciones y resoluciones. Los calendarios de festivos varían según la localidad y no están incorporados a los cálculos de días laborables de este sitio, que únicamente descuentan sábados y domingos.</p>
+          <p>Antes de actuar en función de una fecha límite con consecuencias relevantes, verifica el cómputo con la norma aplicable o consulta a un profesional cualificado. Calculadora de Fechas no se hace responsable de las decisiones adoptadas basándose únicamente en los resultados de sus herramientas.</p>
+          <p>Para cualquier cuestión relacionada con este aviso, puedes escribirnos a <a href="mailto:contact@calculadorafechas.github.io">contact@calculadorafechas.github.io</a>.</p>
+        </article>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <nav aria-label="Enlaces del pie de página">
+          <a href="#/">Inicio</a>
+          <a href="#/articles">Artículos</a>
+          <a href="#/sobre-nosotros">Sobre nosotros</a>
+          <a href="#/contacto">Contacto</a>
+          <a href="#/privacidad">Política de privacidad</a>
+          <a href="#/terminos">Términos de uso</a>
+          <a href="#/aviso-legal">Aviso legal</a>
+        </nav>
+        <p>© 2026 Calculadora de Fechas — Herramientas gratuitas para calcular días entre fechas, días laborables y vencimientos.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ---------- Utilidades de fechas (fechas locales exactas) ---------- */
+        var MS_DIA = 86400000;
+
+        function parseFecha(valor) {
+          if (!valor) return null;
+          var partes = valor.split("-");
+          if (partes.length !== 3) return null;
+          var y = parseInt(partes[0], 10), m = parseInt(partes[1], 10), d = parseInt(partes[2], 10);
+          if (isNaN(y) || isNaN(m) || isNaN(d)) return null;
+          var fecha = new Date(y, m - 1, d);
+          if (fecha.getFullYear() !== y || fecha.getMonth() !== m - 1 || fecha.getDate() !== d) return null;
+          return fecha;
+        }
+        function aISO(fecha) {
+          var m = String(fecha.getMonth() + 1).padStart(2, "0");
+          var d = String(fecha.getDate()).padStart(2, "0");
+          return fecha.getFullYear() + "-" + m + "-" + d;
+        }
+        function diasEntre(a, b) {
+          var ua = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+          var ub = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+          return Math.round((ub - ua) / MS_DIA);
+        }
+        function sumarDias(fecha, n) {
+          var f = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
+          f.setDate(f.getDate() + n);
+          return f;
+        }
+        var fmtLarga = new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+        var fmtCorta = new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "long", year: "numeric" });
+        function capitalizar(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+        function plural(n, sing, plur) { return n + " " + (n === 1 ? sing : plur); }
+
+        function $(id) { return document.getElementById(id); }
+
+        /* ---------- Valores por defecto: hoy y hoy + 30 ---------- */
+        var hoy = new Date();
+        var hoyISO = aISO(hoy);
+        var en30ISO = aISO(sumarDias(hoy, 30));
+        $("dif-desde").value = hoyISO;
+        $("dif-hasta").value = en30ISO;
+        $("sum-fecha").value = hoyISO;
+        $("lab-desde").value = hoyISO;
+        $("lab-hasta").value = en30ISO;
+
+        /* ---------- Herramienta 1: días entre fechas ---------- */
+        $("dif-btn").addEventListener("click", function () {
+          var a = parseFecha($("dif-desde").value);
+          var b = parseFecha($("dif-hasta").value);
+          var err = $("dif-error"), res = $("dif-result");
+          if (!a || !b) { err.classList.add("show"); res.classList.remove("show"); return; }
+          err.classList.remove("show");
+          var diff = diasEntre(a, b);
+          var invertido = diff < 0;
+          var total = Math.abs(diff);
+          var semanas = Math.floor(total / 7);
+          var resto = total % 7;
+          var meses = (total / 30.436875).toFixed(1).replace(".", ",");
+          var anios = (total / 365.25).toFixed(2).replace(".", ",");
+          $("dif-big").textContent = plural(total, "día", "días");
+          var detalle = "";
+          detalle += "<span>" + plural(semanas, "semana completa", "semanas completas");
+          if (resto > 0) detalle += " y " + plural(resto, "día", "días");
+          detalle += "</span> · <span>≈ " + meses + " meses</span> · <span>≈ " + anios + " años</span>";
+          detalle += "<br>Del " + fmtCorta.format(a) + " al " + fmtCorta.format(b) + ".";
+          if (invertido) detalle += " La fecha final es anterior a la inicial; el número de días es el mismo en ambos sentidos.";
+          $("dif-detail").innerHTML = detalle;
+          res.classList.add("show");
+        });
+
+        /* ---------- Herramienta 2: sumar o restar días ---------- */
+        var operacion = 1;
+        $("seg-sumar").addEventListener("click", function () {
+          operacion = 1;
+          $("seg-sumar").classList.add("active");
+          $("seg-restar").classList.remove("active");
+        });
+        $("seg-restar").addEventListener("click", function () {
+          operacion = -1;
+          $("seg-restar").classList.add("active");
+          $("seg-sumar").classList.remove("active");
+        });
+        $("sum-btn").addEventListener("click", function () {
+          var base = parseFecha($("sum-fecha").value);
+          var n = parseInt($("sum-dias").value, 10);
+          var err = $("sum-error"), res = $("sum-result");
+          if (!base || isNaN(n) || n < 0) { err.classList.add("show"); res.classList.remove("show"); return; }
+          err.classList.remove("show");
+          var resultado = sumarDias(base, operacion * n);
+          $("sum-big").textContent = capitalizar(fmtLarga.format(resultado));
+          $("sum-detail").textContent =
+            (operacion === 1 ? "Sumar " : "Restar ") + plural(n, "día", "días") +
+            (operacion === 1 ? " a" : " de") + "l " + fmtCorta.format(base) + " da como resultado el " + fmtCorta.format(resultado) + ".";
+          res.classList.add("show");
+        });
+
+        /* ---------- Herramienta 3: días laborables ---------- */
+        $("lab-btn").addEventListener("click", function () {
+          var a = parseFecha($("lab-desde").value);
+          var b = parseFecha($("lab-hasta").value);
+          var err = $("lab-error"), res = $("lab-result");
+          if (!a || !b) { err.classList.add("show"); res.classList.remove("show"); return; }
+          err.classList.remove("show");
+          var inicio = a, fin = b, invertido = false;
+          if (diasEntre(a, b) < 0) { inicio = b; fin = a; invertido = true; }
+          var laborables = 0, finde = 0;
+          var cursor = new Date(inicio.getFullYear(), inicio.getMonth(), inicio.getDate());
+          var naturales = diasEntre(inicio, fin) + 1; /* incluyendo ambas fechas */
+          for (var i = 0; i < naturales; i++) {
+            var dow = cursor.getDay();
+            if (dow === 0 || dow === 6) finde++; else laborables++;
+            cursor.setDate(cursor.getDate() + 1);
+          }
+          $("lab-big").textContent = plural(laborables, "día laborable", "días laborables");
+          var detalle = "Entre el " + fmtCorta.format(inicio) + " y el " + fmtCorta.format(fin) +
+            " hay " + plural(naturales, "día natural", "días naturales") + " en total (incluyendo ambas fechas), de los cuales " +
+            plural(finde, "día es", "días son") + " de fin de semana. Los festivos no están descontados.";
+          if (invertido) detalle += " Las fechas se han ordenado automáticamente de la más antigua a la más reciente.";
+          $("lab-detail").textContent = detalle;
+          res.classList.add("show");
+        });
+
+        /* ---------- Herramienta 4: accesos rápidos ---------- */
+        var quickBtns = document.querySelectorAll("#quick-btns button");
+        for (var i = 0; i < quickBtns.length; i++) {
+          quickBtns[i].addEventListener("click", function () {
+            var n = parseInt(this.getAttribute("data-dias"), 10);
+            var ahora = new Date();
+            var destino = sumarDias(ahora, n);
+            $("quick-big").textContent = capitalizar(fmtLarga.format(destino));
+            $("quick-detail").textContent = "Dentro de " + plural(n, "día", "días") + " desde hoy (" + fmtCorta.format(ahora) + ") será " + fmtCorta.format(destino) + ".";
+            $("quick-result").classList.add("show");
+          });
+        }
+
+        /* ---------- Enrutador por hash ---------- */
+        var rutas = {
+          "": "page-home",
+          "/": "page-home",
+          "/articles": "page-articles",
+          "/como-calcular-dias-entre-fechas": "page-como-calcular",
+          "/dias-laborables-vs-naturales": "page-laborables",
+          "/calcular-vencimientos-plazos": "page-vencimientos",
+          "/sobre-nosotros": "page-sobre",
+          "/contacto": "page-contacto",
+          "/privacidad": "page-privacidad",
+          "/terminos": "page-terminos",
+          "/aviso-legal": "page-aviso"
+        };
+        function mostrar() {
+          var hash = window.location.hash.replace(/^#/, "");
+          var irAFaq = false;
+          if (hash === "faq") { hash = "/"; irAFaq = true; }
+          var id = rutas[hash] || "page-home";
+          var paginas = document.querySelectorAll(".page");
+          for (var j = 0; j < paginas.length; j++) paginas[j].classList.remove("active");
+          $(id).classList.add("active");
+          if (irAFaq) {
+            var el = $("faq");
+            if (el) el.scrollIntoView();
+          } else {
+            window.scrollTo(0, 0);
+          }
+        }
+        window.addEventListener("hashchange", mostrar);
+        mostrar();
+      })();
+    </script>
+  </body>
+</html>
